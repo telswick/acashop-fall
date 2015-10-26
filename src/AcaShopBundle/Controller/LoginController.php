@@ -14,9 +14,14 @@ class LoginController extends Controller
         $session = $this->get('session');
 
         $msg = null;
+        // $loggedout = null;
 
         $username = $request->get('username');
         $password = $request->get('password');
+        if ($request->getMethod() == 'POST') {       // if the method is POST, then the form has been submitted
+
+            $submitted = 'true';
+        }
 
         $query = '
         select
@@ -30,25 +35,63 @@ class LoginController extends Controller
         $db = new Database();
         $data = $db->fetchRowMany($query);
 
-        if (empty($data) && !empty($username) && !empty($password)) { // Invalid login
+        if (empty($data) && empty($username) && empty($password)) {       // No data, no username and no password
+
+            // echo "You have logged out";
+            // echo "<br/>";
+            // echo "<br/>";
+
+            $msg = 'You have logged out';
+
+            $session->set('isLoggedIn', false);
+            $session->set('username', "");
+            $session->set('password', "");
+        }
+
+        else if (empty($data) && !empty($username) && !empty($password)) { // Invalid login
+
+            // echo $username;
+            // echo $password;
+            echo "Invalid login, please check credentials and try again";
+            echo "<br/>";
+            echo "<br/>";
+
 
             $msg = 'Please check your credentials';
             $session->set('isLoggedIn', false);
 
-        } else { // Valid login
+        }
+
+        else { // Valid login
+
+            // echo $username;
+            // echo $password;
+            // echo "We have a valid login here (Yay!)";
+            // echo "<br/>";
 
             $row = array_pop($data);
             $name = $row['name']; // person's name
 
+            // echo "<pre>";
+            // print_r($data);
+
+            // echo $name;
+
             $session->set('isLoggedIn', true);
             $session->set('name', $name);
-            $session->save();                   // is this needed?
+            // $session->save();                   // is this needed?
+
+
         }
+
+
+
+
         $loggedIn = $session->get('isLoggedIn');
         $name = $session->get('name');
 
         return $this->render(
-            'AcaShopBundle:LoginForm:login.form.traci.html.twig',
+            'AcaShopBundle:LoginForm2:smurf.html.twig',  // if logged in , get a welcome name
             array(
                 'loggedIn' => $loggedIn,
                 'name' => $name,

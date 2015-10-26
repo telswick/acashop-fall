@@ -53,11 +53,11 @@ class DefaultController extends Controller
         echo $query;
 
         $db = new Database();
-        $data = $db->fetchRows($query);
+        $data = $db->fetchRowMany($query);
 
         print_r($data);
 
-        die();
+        // die();
 
         // Run a query against the DB
         // Check for the record that exists or not

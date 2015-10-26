@@ -6,7 +6,6 @@ aca_shop_homepage:
 aca_login_route:
     path: /login_form
     defaults: { _controller: AcaShopBundle:Default:loginForm }
-    methods: [GET, POST]
 
 aca_login_handler:
     path: /process_login
