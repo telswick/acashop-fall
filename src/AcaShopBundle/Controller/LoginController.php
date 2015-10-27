@@ -15,9 +15,12 @@ class LoginController extends Controller
 
         $msg = null;
         // $loggedout = null;
+        $shippingAddressId = null;
+        $billingAddressId = null;
 
         $username = $request->get('username');
         $password = $request->get('password');
+
         if ($request->getMethod() == 'POST') {       // if the method is POST, then the form has been submitted
 
             $submitted = 'true';
@@ -34,6 +37,9 @@ class LoginController extends Controller
 
         $db = new Database();
         $data = $db->fetchRowMany($query);
+
+        // echo "<pre>";
+        // print_r($data);
 
         if (empty($data) && empty($username) && empty($password)) {       // No data, no username and no password
 
@@ -71,6 +77,8 @@ class LoginController extends Controller
 
             $row = array_pop($data);
             $name = $row['name']; // person's name
+            $shippingAddressId = $row['shipping_address_id'];   // person's shipping address
+            $billingAddressId = $row['billing_address_id'];     // person's billing address
 
             // echo "<pre>";
             // print_r($data);
@@ -79,6 +87,8 @@ class LoginController extends Controller
 
             $session->set('isLoggedIn', true);
             $session->set('name', $name);
+            $session->set('shippingAddressId', $shippingAddressId);
+            $session->set('billingAddressId', $billingAddressId);
             // $session->save();                   // is this needed?
 
 
@@ -90,14 +100,17 @@ class LoginController extends Controller
         $loggedIn = $session->get('isLoggedIn');
         $name = $session->get('name');
 
+        // if logged in , get a welcome name
         return $this->render(
-            'AcaShopBundle:LoginForm2:smurf.html.twig',  // if logged in , get a welcome name
+            'AcaShopBundle:LoginForm2:smurf.html.twig',
             array(
                 'loggedIn' => $loggedIn,
                 'name' => $name,
                 'msg' => $msg,
                 'username' => $username,
-                'password' => $password
+                'password' => $password,
+                'shippingAddressId' => $shippingAddressId,
+                'billingAddressId' => $billingAddressId
             )
         );
     }
