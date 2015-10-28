@@ -7,15 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
-{
-    public function indexAction($name, $age)
+{public function indexAction()
     {
         return $this->render(
-            'AcaShopBundle:Default:index.html.twig',
-            array(
-                'name' => $name,
-                'age' => $age
-            )
+            'AcaShopBundle:Default:index.html.twig'
         );
     }
 

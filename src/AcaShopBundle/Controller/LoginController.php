@@ -5,13 +5,20 @@ namespace AcaShopBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AcaShopBundle\Db\Database;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class LoginController extends Controller
 {
 
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function loginFormAction(Request $request)
     {
         $session = $this->get('session');
+        // $session = $this->getSession();
 
         $msg = null;
         // $loggedout = null;
@@ -95,7 +102,7 @@ class LoginController extends Controller
         }
 
 
-
+        $session->save();
 
         $loggedIn = $session->get('isLoggedIn');
         $name = $session->get('name');
