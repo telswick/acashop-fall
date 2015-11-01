@@ -1,10 +1,11 @@
 <?php
-namespace Aca\Bundle\ShopBundle\Controller;
-use Aca\Bundle\ShopBundle\Db\Database;
+namespace AcaShopBundle\Controller;
+use AcaShopBundle\Db\Database;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+
 class LoginController extends Controller
 {
     /**

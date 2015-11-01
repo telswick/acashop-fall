@@ -2,11 +2,49 @@
 {#We want a welcome message to show up when they are logged in#}
 {#We also want a logout button to show up when they are logged in#}
 
+<html>
+
+<head>
+
+    <style>
+        h1 {
+            color:blue;
+            font-family:verdana;
+            font-size:300%;
+        }
+        h2  {
+            color:blue;
+            font-family:verdana;
+            font-size:200%;
+        }
+        h3  {
+            color:blue;
+            font-family:verdana;
+            font-size:125%;
+        }
+        p  {
+            color:darkblue;
+            font-family:verdana;
+            font-size:100%;
+        }
+    </style>
+
+<body style="background-color:lightcyan">
+
+
+
 {% if loggedIn %}
 
-    Welcome {{ name }}
-    <form action="/logout" method="post">
-        <input type="submit" value="Logout"/>
+    <h1>ACA Shop</h1>
+    <h2>Welcome {{ name }} !</h2>
+    <!--<h3>Is your shipping address still   ?</h3>
+    <h3>Is your billing address still   ?</h3>-->
+    <form action="/logout" method = "post">
+        <p><br/>
+            You are currently logged in. If you would like to log out, click the LogOut button
+            <br/><br/>
+            <input type="submit" name = "LogOut" value="LogOut"/>
+            <br/></p>
     </form>
 
 {% else %}
@@ -15,14 +53,19 @@
         <span style="color:red">{{ msg }}</span>
     {% endif %}
 
+    <h1>ACA Shop</h1>
     <form action="/login_form" method="post">
 
-        Username: <input type="text" name="username" value="{{ username }}"/>
-        <br/>
-        Password: <input type="password" name="password" value="{{ password }}"/>
-        <br/>
-
-        <input type="submit" value="Login"/>
+        <p>Username: <input type="text" name="username" value="{{ username }}"/>
+            <br/><br/>
+            Password : <input type="password" name="password" value="{{ password }}"/>
+            <br/><br/>
+            <input type="submit" value="Login"/>
+            <br/></p>
     </form>
 
 {% endif %}
+
+</body>
+
+</html>
