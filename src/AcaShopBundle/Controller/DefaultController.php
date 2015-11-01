@@ -14,6 +14,7 @@ class DefaultController extends Controller
         );
     }
 
+    /*
     public function loginFormAction()
     {
         return $this->render(
@@ -67,4 +68,6 @@ class DefaultController extends Controller
         // we don't care where they come from user $request->get
 
     }
+*/
+
 }
