@@ -1,6 +1,9 @@
 aca_shop_homepage:
     path:     /
-    defaults: { _controller: AcaShopBundle:Default:index }
+    # defaults: { _controller: AcaShopBundle:Default:index }
+    defaults: { _controller: AcaShopBundle:Login:loginForm }
+    methods: [GET, POST]
+
 
 
 aca_login_route:

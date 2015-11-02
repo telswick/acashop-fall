@@ -2,34 +2,15 @@
 {#We want a welcome message to show up when they are logged in#}
 {#We also want a logout button to show up when they are logged in#}
 
-<html>
 
-<head>
 
-    <style>
-        h1 {
-            color:blue;
-            font-family:verdana;
-            font-size:300%;
-        }
-        h2  {
-            color:blue;
-            font-family:verdana;
-            font-size:200%;
-        }
-        h3  {
-            color:blue;
-            font-family:verdana;
-            font-size:125%;
-        }
-        p  {
-            color:darkblue;
-            font-family:verdana;
-            font-size:100%;
-        }
-    </style>
+{%  extends "::base.html.twig" %}
 
-<body style="background-color:lightcyan">
+{%  block content %}
+
+    <div class="container">
+        {% block container %}
+
 
 
 
@@ -66,6 +47,8 @@
 
 {% endif %}
 
-</body>
+        {% endblock %}
+    </div>
 
-</html>
+{% endblock %}
+

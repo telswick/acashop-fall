@@ -27,21 +27,28 @@ class LoginController extends Controller
             where
                 u.username = "' . $username . '"
                 and u.password = "' . $password . '"';
+
             $db = new Database();
             $data = $db->fetchRowMany($query);
+
             if (empty($data) && $request->getMethod() == 'POST') { // Invalid login
                 $msg = 'Please check your credentials';
                 $session->set('loggedIn', false);
+
             } else { // Valid login
                 $row = array_pop($data);
                 $name = $row['name']; // person's name
+
                 $session->set('loggedIn', true);
                 $session->set('name', $name);
             }
         }
+
         $session->save();
+
         $loggedIn = $session->get('loggedIn');
         $name = $session->get('name');
+
         return $this->render(
             'AcaShopBundle:LoginForm:login-form.html.twig',
             array(
