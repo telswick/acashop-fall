@@ -16,10 +16,54 @@ class RegistrationController extends Controller
     {
         echo "Here in the Registration Controller";
 
+        $msg = null;
+        $session = $this->getSession();
+        $name = $request->get('name');
+        $username = $request->get('username');
+        $password = $request->get('password');
+
+        if (!empty($username) && !empty($password)) {
+            $query = '
+            INSERT INTO aca_user
+            (name, username, password)
+            VALUES
+            ("' . $name . '", "' . $username . '", "' . $password . '")';
+
+            $db = new Database();
+            $db->insertQuery($query);
+
+            $session->set('submitRegistration', true);
+            $session->set('loggedIn', true);
+
+            $session->save();
+
+            $submitRegistration = $session->get('submitRegistration');
+            $name = $session->get('name');
+
+            return new RedirectResponse('/');
+        }
+
         return $this->render(
             'AcaShopBundle:RegistrationForm:registration-form.html.twig'
-        );
+            );
+
 
 
     }
+
+
+    /**
+     * Get a valid started session
+     * @return Session
+     */
+    private function getSession()
+    {
+        /** @var Session $session */
+        $session = $this->get('session');
+        if (!$session->isStarted()) {
+            $session->start();
+        }
+        return $session;
+    }
+
 }

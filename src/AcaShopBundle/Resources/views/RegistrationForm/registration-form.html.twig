@@ -5,7 +5,23 @@
     <div class="container">
         {% block container %}
 
-            <h2>Add Registration Stuff Here</h2>
+            <!-- <h2>Add Registration Stuff Here</h2><h1>ACA Shop</h1>   -->
+            <form action="/registration" method="post">
+
+                Please choose a username and password for your new account
+                <p>Username: <input type="text" name="username" />
+                    <br/><br/>
+                    Password : <input type="password" name="password" />
+                    <br/><br/>
+                    What name should we call you?
+                    <br/>
+                    Name : <input type="text" name="name" />
+                    <br/><br/>
+                    <input type="submit" name="signup" value="SignUp"/>
+                    <!-- <input type="submit" name="login" value="Login"/>    -->
+                    <br/></p>
+            </form>
+
 
         {% endblock %}
     </div>

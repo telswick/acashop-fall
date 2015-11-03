@@ -60,6 +60,29 @@ class Database
 
         return $return;
     }
+
+    public function insertQuery($query)
+    {
+        $this->db->query($query);
+
+    }
+
+
+    public function requestQuery($query)
+    {
+        $return = [];
+        $result = $this->db->query($query);
+
+        while ($row = $result->fetch_assoc()) {
+            $return[] = $row;
+        }
+
+        return $return;
+
+
+
+    }
+
 }   // end of class Database
 
 

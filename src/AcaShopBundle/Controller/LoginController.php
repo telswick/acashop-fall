@@ -76,49 +76,7 @@ class LoginController extends Controller
     }
 
 
-    public function registrationAction(Request $request)
-    {
-        $msg = null;
-        $session = $this->getSession();
-        $username = $request->get('username');
-        $password = $request->get('password');
 
-        $session->set('submitRegistration', true);
-        // $session->set('name', $name);
-
-        if (!empty($username) && !empty($password)) {
-            $query = '
-            INSERT INTO aca_user
-            (username, password)
-            VALUES
-            ("' . $username . '", "' . $password . '")';
-
-            $db = new Database();
-            $result = $this->db->query($query);
-
-            $session->save();
-
-            $submitRegistration = $session->get('submitRegistration');
-            $name = $session->get('name');
-
-            return new RedirectResponse('/');
-
-
-            /*
-            return $this->render(
-                'AcaShopBundle:LoginForm:login-form.html.twig',
-                array(
-                    'submitRegistration' => $submitRegistration,
-                    'name' => $name,
-                    'msg' => $msg,
-                    'username' => $username,
-                    'password' => $password
-                )
-            );
-            */
-
-        }
-    }
 
 
     /**
