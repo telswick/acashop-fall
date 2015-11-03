@@ -14,7 +14,7 @@
 
 
 
-{% if loggedIn %}
+{% if loggedIn  %}
 
     <h1>ACA Shop</h1>
     <h2>Welcome {{ name }} !</h2>
@@ -27,6 +27,8 @@
             <input type="submit" name = "LogOut" value="LogOut"/>
             <br/></p>
     </form>
+
+
 
 {% else %}
 
@@ -41,11 +43,13 @@
             <br/><br/>
             Password : <input type="password" name="password" value="{{ password }}"/>
             <br/><br/>
-            <input type="submit" value="Login"/>
+            <input type="submit" name="signup" value="SignUp"/>
+            <input type="submit" name="login" value="Login"/>
             <br/></p>
     </form>
 
 {% endif %}
+
 
         {% endblock %}
     </div>

@@ -16,6 +16,27 @@ aca_logout_route:
     defaults: { _controller: AcaShopBundle:Login:logout}
     methods: [POST]
 
+aca_registration_route:
+    path: /registration
+    defaults: { _controller: AcaShopBundle:Registration:registrationForm}
+    methods: [GET, POST]
+
+aca_products_route:
+    path: /products
+    defaults: { _controller: AcaShopBundle:Products:showProducts}
+    methods: [GET, POST]
+
+aca_cart_route:
+    path: /cart
+    defaults: { _controller: AcaShopBundle:Cart:showCart}
+    methods: [GET, POST]
+
+
+
+
+
+
+
 # aca_login2_route:
 #     path: /login_form2
 #     defaults: { _controller: AcaShopBundle:Login:loginForm}  # copy from Default to Login
