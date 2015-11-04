@@ -39,6 +39,7 @@ class ProductsController extends Controller
             $image = $row['image'];
             $category = $row['category'];
             $price = $row['price'];
+            $price = "$" . (float)$price;
             $date_added = $row['date_added'];
 
 
