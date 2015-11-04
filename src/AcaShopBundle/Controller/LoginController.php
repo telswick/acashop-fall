@@ -18,6 +18,7 @@ class LoginController extends Controller
         $session = $this->getSession();
         $username = $request->get('username');
         $password = $request->get('password');
+
         if (!empty($username) && !empty($password)) {
             $query = '
             select

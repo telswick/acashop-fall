@@ -3,6 +3,7 @@ namespace AcaShopBundle\Controller;
 use AcaShopBundle\Db\Database;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFpundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -11,6 +12,9 @@ class ProductsController extends Controller
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
+     * 1. Write a query to get all products
+     * 2. Create a template
+     * 3. Hand off the data to the template
      */
     public function showProductsAction(Request $request)
     {
@@ -26,8 +30,7 @@ class ProductsController extends Controller
                 u.*
             FROM
                 aca_product u
-            WHERE
-                u.product_id = "1" ';
+            ';
 
             $db = new Database();
             $data = $db->requestQuery($query);
@@ -45,15 +48,7 @@ class ProductsController extends Controller
 
             return $this->render(
                 'AcaShopBundle:ProductsForm:products-form.html.twig',
-                array(
-                    'product_id' => $product_id,
-                    'name' => $name,
-                    'description' => $description,
-                    'image' => $image,
-                    'category' => $category,
-                    'price' => $price,
-                    'date_added' => $date_added
-                )
+                array('products' => $data)
 
             );
 

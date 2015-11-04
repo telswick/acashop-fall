@@ -24,7 +24,7 @@ aca_registration_route:
 aca_products_route:
     path: /products
     defaults: { _controller: AcaShopBundle:Products:showProducts}
-    methods: [GET, POST]
+    methods: [GET]
 
 aca_cart_route:
     path: /cart
