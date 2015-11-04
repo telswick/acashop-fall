@@ -26,6 +26,11 @@ aca_products_route:
     defaults: { _controller: AcaShopBundle:Products:showProducts}
     methods: [GET]
 
+aca_productdetail_route:
+    path: /product/detail/{slug}
+    defaults: { _controller: AcaShopBundle:ProductDetail:showProductDetail}
+    methods: [GET]
+
 aca_cart_route:
     path: /cart
     defaults: { _controller: AcaShopBundle:Cart:showCart}

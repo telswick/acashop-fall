@@ -68,10 +68,10 @@
 
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src=" {{ product.image }}" height="50"  alt="">
+                                <img src=" {{ product.image }}" height="50px"  alt="">
                                 <div class="caption">
                                     <h4 class="pull-right"> {{ product.price }}   </h4>
-                                    <h4><a href="#"> {{ product.name }} </a>
+                                    <h4><a href="/product/detail/{{ product.slug }}"> {{ product.name }} </a>
                                     </h4>
                                     <p> {{ product.description }}  </p>
                                 </div>

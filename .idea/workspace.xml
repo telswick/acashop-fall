@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b60c4225-e472-4037-8c55-f1aee2eef2ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AcaShopBundle/Controller/LoginController.php" afterPath="$PROJECT_DIR$/src/AcaShopBundle/Controller/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductsController.php" afterPath="$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductDetailController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductDetail/productdetail-form.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductsForm/products-form.html.twig" afterPath="$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductsForm/products-form.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AcaShopBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/AcaShopBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -34,44 +34,52 @@
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="1105">
+              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration-form.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Resources/views/RegistrationForm/registration-form.html.twig">
+      <file leaf-file-name="ProductDetailController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductDetailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="578">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.6028369" vertical-offset="595" max-vertical-offset="1496">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
-                <element signature="e#13#29#0#Twig" expanded="true" />
+                <element signature="e#42#72#0#PHP" expanded="true" />
+                <element signature="e#1256#1313#0#PHP" expanded="true" />
+                <marker date="1446605010801" expanded="true" signature="611:717" placeholder="SELECT u.* F..aca_product..." />
+                <marker date="1446605010801" expanded="true" signature="611:723" placeholder="SELECT u.* F..aca_product..." />
+                <marker date="1446605010801" expanded="true" signature="611:724" placeholder="SELECT u.* F..aca_product..." />
+                <marker date="1446605010801" expanded="true" signature="611:725" placeholder="SELECT u.* F..aca_product..." />
+                <marker date="1446605010801" expanded="true" signature="611:738" placeholder="SELECT u.* F..aca_product..." />
+                <marker date="1446605010801" expanded="true" signature="611:739" placeholder="SELECT u.* F..aca_product..." />
+                <marker date="1446605010801" expanded="true" signature="611:922" placeholder="SELECT u.* F..aca_product..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <file leaf-file-name="productdetail-form.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductDetail/productdetail-form.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="952">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2210">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#952#967#0#Twig" expanded="true" />
+                <element signature="e#13#29#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products-form.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="products-form.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductsForm/products-form.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5245009" vertical-offset="901" max-vertical-offset="2210">
-              <caret line="70" column="74" selection-start-line="70" selection-start-column="74" selection-end-line="70" selection-end-column="74" />
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="901" max-vertical-offset="2210">
+              <caret line="62" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="14" />
               <folding>
-                <element signature="e#13#29#0#Twig" expanded="true" />
+                <marker date="1446604021747" expanded="true" signature="38:4727" placeholder="{%  block content ...%}" />
               </folding>
             </state>
           </provider>
@@ -132,8 +140,8 @@
       <file leaf-file-name="ProductsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3076925" vertical-offset="388" max-vertical-offset="1360">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state vertical-scroll-proportion="-20.384615" vertical-offset="728" max-vertical-offset="1360">
+              <caret line="74" column="1" selection-start-line="20" selection-start-column="8" selection-end-line="74" selection-end-column="1" />
               <folding>
                 <element signature="e#42#72#0#PHP" expanded="true" />
                 <element signature="e#1406#1458#0#PHP" expanded="true" />
@@ -190,9 +198,11 @@
         <option value="$PROJECT_DIR$/src/AcaShopBundle/Resources/views/RegistrationForm/registration-form.html.twig" />
         <option value="$PROJECT_DIR$/src/AcaShopBundle/Db/Database.php" />
         <option value="$PROJECT_DIR$/src/AcaShopBundle/Controller/LoginController.php" />
-        <option value="$PROJECT_DIR$/src/AcaShopBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductsController.php" />
+        <option value="$PROJECT_DIR$/src/AcaShopBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductsForm/products-form.html.twig" />
+        <option value="$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductDetail/productdetail-form.html.twig" />
+        <option value="$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductDetailController.php" />
       </list>
     </option>
   </component>
@@ -337,6 +347,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ProductsForm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcaShopBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProductDetail" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -657,7 +697,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446526868790</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ready to try actual products from database in Products controller and twig">
+      <created>1446601369808</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1446601369808</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1068,16 +1114,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="1105">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3076925" vertical-offset="388" max-vertical-offset="1360">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state vertical-scroll-proportion="-20.384615" vertical-offset="728" max-vertical-offset="1360">
+          <caret line="74" column="1" selection-start-line="20" selection-start-column="8" selection-end-line="74" selection-end-column="1" />
           <folding>
             <element signature="e#42#72#0#PHP" expanded="true" />
             <element signature="e#1406#1458#0#PHP" expanded="true" />
@@ -1090,10 +1136,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductsForm/products-form.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5245009" vertical-offset="901" max-vertical-offset="2210">
-          <caret line="70" column="74" selection-start-line="70" selection-start-column="74" selection-end-line="70" selection-end-column="74" />
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="901" max-vertical-offset="2210">
+          <caret line="62" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="14" />
+          <folding>
+            <marker date="1446604021747" expanded="true" signature="38:4727" placeholder="{%  block content ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Resources/views/ProductDetail/productdetail-form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="590">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#13#29#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Controller/ProductDetailController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6028369" vertical-offset="595" max-vertical-offset="1496">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="e#42#72#0#PHP" expanded="true" />
+            <element signature="e#1256#1313#0#PHP" expanded="true" />
+            <marker date="1446605010801" expanded="true" signature="611:717" placeholder="SELECT u.* F..aca_product..." />
+            <marker date="1446605010801" expanded="true" signature="611:723" placeholder="SELECT u.* F..aca_product..." />
+            <marker date="1446605010801" expanded="true" signature="611:724" placeholder="SELECT u.* F..aca_product..." />
+            <marker date="1446605010801" expanded="true" signature="611:725" placeholder="SELECT u.* F..aca_product..." />
+            <marker date="1446605010801" expanded="true" signature="611:738" placeholder="SELECT u.* F..aca_product..." />
+            <marker date="1446605010801" expanded="true" signature="611:739" placeholder="SELECT u.* F..aca_product..." />
+            <marker date="1446605010801" expanded="true" signature="611:922" placeholder="SELECT u.* F..aca_product..." />
           </folding>
         </state>
       </provider>
