@@ -1,0 +1,43 @@
+{% extends "::base.html.twig" %}
+
+
+
+
+
+    {% block container %}
+
+
+        <h3>{{ product.name }} <span style="color:red;">${{ product.price }}</span></h3>
+
+        <br/>
+        <img src="{{ product.image }}" style="width:25%"/>
+        <br/>
+        {{ product.description }}
+        <br/>
+        <br/>
+
+        <!-- Create the /add_cart route
+        Create a controller method
+        Receive the product_id and quantity fields in the method
+        -->
+
+       <!-- Create an add to cart form -->
+        <form action="/add_cart" method = "post">
+            <input type="hidden" name="product_id" value="{{ product.id }}"/>
+            <input type="hidden" name="price" value="{{ product.price }}"
+            <p><br/>
+                To purchase this item, please select the quantity to order and Add To Cart
+                <br/>
+                <input type="number" name="qty" min="1" max="100" maxlength="15"/>
+                <br/><br/>
+                <input type="submit" name = "AddToCart" value="Add To Cart"/>
+                <br/></p>
+        </form>
+
+
+    {% endblock %}
+
+
+
+
+

@@ -2,3 +2,13 @@ services:
 #    aca_shop.example:
 #        class: AcaShopBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+  acadb:
+    class: Simplon\Mysql\Mysql
+    arguments: [%database_host%, %database_user%, %database_password%, %database_name%]
+
+  cart:
+    class: AcaShopBundle\Service\CartService
+    arguments:  [@acadb, @session]
+
+    # now object will get correct parameters by @ referring to another service

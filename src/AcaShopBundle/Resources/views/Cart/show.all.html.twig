@@ -1,0 +1,69 @@
+{%  extends "::base.html.twig" %}
+
+{%  block container %}
+
+
+
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            table {
+                width:100%;
+            }
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 5px;
+                text-align: left;
+            }
+            table.names tr:nth-child(even) {
+                background-color: #eee;
+            }
+            table.names tr:nth-child(odd) {
+                background-color:#fff;
+            }
+            table.names th	{
+                background-color: black;
+                color: white
+            }
+        </style>
+    </head>
+<body>
+
+
+
+
+            <h2>Shopping Cart</h2>
+
+            <h3>{{ stuff.product_id }} <span style="color:red;">${{ stuff.qty }}</span></h3>
+            <br>
+
+
+    <table class="names">
+        <tr>
+            <th>Item Number</th>
+            <th>Item Name</th>
+            <th>Unit Price</th>
+            <th>Qty</th>
+            <th>Total Price</th>
+        </tr>
+        <tr>
+            <td> product_id  </td>
+            <td>whatever</td>
+            <td> 100.00 </td>
+            <td>{{ stuff.qty }}</td>
+            <td> 2000.00 </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+
+
+{% endblock %}

@@ -39,9 +39,12 @@ class LoginController extends Controller
             } else { // Valid login
                 $row = array_pop($data);
                 $name = $row['name']; // person's name
+                $id = $row['user_id']; //
 
                 $session->set('loggedIn', true);
                 $session->set('name', $name);
+                $session->set('user_id', $id);
+
             }
         }
 

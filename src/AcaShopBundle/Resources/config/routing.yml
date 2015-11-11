@@ -23,18 +23,23 @@ aca_registration_route:
 
 aca_products_route:
     path: /products
-    defaults: { _controller: AcaShopBundle:Products:showProducts}
+    defaults: { _controller: AcaShopBundle:Product:showProducts}
     methods: [GET]
 
-aca_productdetail_route:
+aca_product_detail:
     path: /product/detail/{slug}
-    defaults: { _controller: AcaShopBundle:ProductDetail:showProductDetail}
+    defaults: { _controller: AcaShopBundle:Product:showProductDetail}
     methods: [GET]
 
-aca_cart_route:
+aca_cart:
     path: /cart
     defaults: { _controller: AcaShopBundle:Cart:showCart}
-    methods: [GET, POST]
+    methods: [GET]
+
+aca_cart_add:
+    path: /add_cart
+    defaults:  { _controller: AcaShopBundle:Cart:addCart}
+    methods: [POST]
 
 
 

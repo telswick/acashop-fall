@@ -10,12 +10,13 @@
 
     {% block container %}
 
-        <h2>Add Products Stuff Here</h2>
+        <h2></h2>
         <!-- Page Content -->
         <div class="container">
 
             <div class="row">
 
+                <!--
                 <div class="col-md-3">
                     <p class="lead">Shop Name</p>
                     <div class="list-group">
@@ -25,6 +26,7 @@
                     </div>
                 </div>
 
+                <!--  Get Rid of the Carousel
                 <div class="col-md-9">
 
                     <div class="row carousel-holder">
@@ -58,17 +60,19 @@
 
                     </div>
 
+                    -->
+
                     <!--  Add loop here around product 1 and nix other products  -->
 
-                    {% for product in products %}
+        {% for product in products %}
 
 
 
-                    <div class="row">
+            <div class="row">
 
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src=" {{ product.image }}" height="50px"  alt="">
+                                <img src="{{ product.image }}" alt="" style="width:30%">
                                 <div class="caption">
                                     <h4 class="pull-right"> {{ product.price }}   </h4>
                                     <h4><a href="/product/detail/{{ product.slug }}"> {{ product.name }} </a>
