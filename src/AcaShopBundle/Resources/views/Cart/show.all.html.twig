@@ -40,7 +40,7 @@
 
             <h2>Shopping Cart</h2>
 
-            <h3>{{ stuff.product_id }} <span style="color:red;">${{ stuff.qty }}</span></h3>
+            <!-- <h3>{{ stuff.product_id }} <span style="color:red;">${{ stuff.qty }}</span></h3> -->
             <br>
 
 
@@ -52,13 +52,19 @@
             <th>Qty</th>
             <th>Total Price</th>
         </tr>
+
+        {% for cartProduct in cartProducts %}
+
         <tr>
-            <td> product_id  </td>
-            <td>whatever</td>
-            <td> 100.00 </td>
+            <td>{{ stuff.id }}  </td>
+            <td>{{ stuff.name }}</td>
+            <td>{{ stuff.price }} </td>
             <td>{{ stuff.qty }}</td>
             <td> 2000.00 </td>
         </tr>
+
+            {% endfor %}
+
     </table>
 
 </body>

@@ -37,10 +37,10 @@ aca_cart:
     methods: [GET]
 
 aca_cart_add:
-    path: /add_cart
+    path: /cart
     defaults:  { _controller: AcaShopBundle:Cart:addCart}
     methods: [POST]
-
+# change back to /cart
 
 
 
