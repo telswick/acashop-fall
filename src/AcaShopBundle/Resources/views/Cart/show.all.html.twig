@@ -1,6 +1,6 @@
 {%  extends "::base.html.twig" %}
 
-{%  block content %}
+{%  block container %}
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-    <table class="names" style="width:100%;">
+    <table class="table" style="width:100%;">
         <tr>
             <th>Item Number</th>
             <th>Item Name</th>
@@ -53,13 +53,13 @@
             <th>Action</th>
         </tr>
 
-        {% for stuff in cartProducts %}
+        {% for cartProduct in cartProducts %}
 
         <tr>
-            <td>{{ stuff.id }}  </td>
-            <td>{{ stuff.name }}</td>
-            <td>{{ stuff.price }} </td>
-            <td>{{ stuff.qty }}</td>
+            <td>{{ cartProduct.id }}  </td>
+            <td>{{ cartProduct.name }}</td>
+            <td>{{ cartProduct.price }} </td>
+            <td>{{ cartProduct.qty }}</td>
             <td> 2000.00 </td>
             <td>
 

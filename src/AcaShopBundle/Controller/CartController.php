@@ -62,7 +62,7 @@ class CartController extends Controller
 
         return $this->render(
             'AcaShopBundle:Cart:show.all.html.twig',
-            array('stuff' => $cartProducts)
+            array('cartProducts' => $cartProducts)
 
 
         );
