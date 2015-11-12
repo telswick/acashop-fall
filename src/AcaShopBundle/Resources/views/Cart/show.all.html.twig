@@ -1,6 +1,6 @@
 {%  extends "::base.html.twig" %}
 
-{%  block container %}
+{%  block content %}
 
 
 
@@ -40,20 +40,20 @@
 
             <h2>Shopping Cart</h2>
 
-            <!-- <h3>{{ stuff.product_id }} <span style="color:red;">${{ stuff.qty }}</span></h3> -->
-            <br>
 
 
-    <table class="names">
+
+    <table class="names" style="width:100%;">
         <tr>
             <th>Item Number</th>
             <th>Item Name</th>
             <th>Unit Price</th>
             <th>Qty</th>
             <th>Total Price</th>
+            <th>Action</th>
         </tr>
 
-        {% for cartProduct in cartProducts %}
+        {% for stuff in cartProducts %}
 
         <tr>
             <td>{{ stuff.id }}  </td>
@@ -61,6 +61,20 @@
             <td>{{ stuff.price }} </td>
             <td>{{ stuff.qty }}</td>
             <td> 2000.00 </td>
+            <td>
+
+                <form name="quantityForm" action="/update_cart_qty" method="post">
+                    <input type="hidden" name="cart_product_id" value="{{ cartProduct.id }}"/>
+                    <input type="text" size="3" name="qty" value="{{ cartProduct.qty }}"/>
+                    <input type="submit" value="Update" class="button btn-primary"/>
+                </form>
+
+                <form name="deleteForm" action="/delete_cart_item" method="post">
+                    <input type="hidden" name="cart_product_id" value="{{ cartProduct.id }}"/>
+                    <input type="submit" value="Delete" class="button btn-danger"/>
+                </form>
+
+            </td>
         </tr>
 
             {% endfor %}

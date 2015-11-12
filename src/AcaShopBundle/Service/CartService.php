@@ -62,12 +62,13 @@ class CartService
         $productPrice = $this->getProductPrice($productId);
 
 
-        echo $cartId;
-        echo $productPrice;
+        // echo $cartId;
+        // echo $productPrice;
 
         //$insertedId = $this->db->insert()
 
-        $insertedId = $this->db->insert('aca_cart_product', array(
+        $insertedId = $this->db->insert('aca_cart_product',
+            array(
                 'cart_id' => $cartId,
                 'product_id' => $productId,
                 'qty' => $quantity,
@@ -78,13 +79,18 @@ class CartService
 
     }
 
+    /**
+     * Get the price of one product
+     * @param int $productId
+     * @return float
+     */
     protected function getProductPrice($productId)
     {
      $query = 'select price from aca_product where id = "'. $productId . '"';
 
         $row = $this->db->fetchRow($query);
 
-        return $row['price'];
+        return isset($row['price']) ? $row['price'] : null;
 
     }
 
@@ -92,15 +98,20 @@ class CartService
     /**
      * Create a cart record, and return the ID, if it doesn't exist
      * If it does exist, just return the Id
+     * @throws \Exception
+     * @return int
      */
     public function getCartId()
     {
 
         // check if user has a cart
         $userId = $this->session->get('user_id');
+        if (empty($userId)) {
+            throw new \Exception('You must be logged in');
+        }
 
 
-        $cartId = '
+        $query = '
             Select
                 id
             from
@@ -108,28 +119,23 @@ class CartService
             WHERE
                 user_id = ' . $userId;
 
-        $result = $this->db->fetchRow($cartId);
+        $row = $this->db->fetchRow($query, array('userId' => $userId));
 
-        echo "<pre>";
-        print_r($result);
-        // die('should be result of id from aca_cart');
-
-        if (empty($result)) {
-
-            $cartId = $this->db->insert('aca_cart', array('user_id' => $userId));
-
-        } else {
-
-            $cartId = $result['id'];
-
+        // We have a cart record
+        if (isset($row['id']) && !empty($row)) {
+            return $row['id'];
         }
-
-        return $cartId;
+        $this->db->insert('aca_cart', array('user_id' => $userId));
+        return $this->getCartId();
     }
 
 
-
-    public function showCart()
+    /**
+     * Get all products that are in this user's shopping cart
+     * @return array|null
+     * @throws \Exception
+     */
+    public function getAllCartProducts()
     {
 
         $query = '
@@ -145,8 +151,7 @@ class CartService
 	        inner join aca_product as p on (p.id = cp.product_id)
 	        left join aca_cart as c on (c.id = cp.cart_id)
         where
-	        cp.cart_id = 1
-        ';
+	        cp.cart_id = :myCartId';
 
 
         return $this->db->fetchRowMany($query,
@@ -158,10 +163,4 @@ class CartService
 
 
     }
-
-
-
-
-
-
 }
