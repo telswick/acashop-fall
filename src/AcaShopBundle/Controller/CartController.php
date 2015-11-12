@@ -16,8 +16,6 @@ class CartController extends Controller
 {
 
 
-
-
     /**
      *
      * @return \Symfony\Component\HttpFoundation\Response
@@ -28,14 +26,12 @@ class CartController extends Controller
         // This query should be written in the service
         // The method should return an array of all "joined" product records with
         //  relevant information needed to render a cart
-
         // Get all the products from the newly created method in the CartService
         // Assign that data to the template
         // loop through the data and display a table
         // Extra: Also create the forms mentioned on the board (update, delete)
 
         // $cart = $this->get('cart');
-
 
         // $db = $this->get('acadb');
 
@@ -102,6 +98,57 @@ class CartController extends Controller
 
 
     }
+
+    public function updateCartQtyAction(Request $request)
+    {
+        $cart = $this->get('cart');          // trying to use CartService
+
+        $productId = $request->get('product_id');
+        $quantity = $request->get('qty');
+        $cartId = $cart->getCartId();
+
+        $cart->updateQty($productId, $quantity, $cartId);
+
+        // return new RedirectResponse('/cart');
+
+        return $this->redirect('/cart');
+
+
+    }
+
+
+
+    public function deleteCartItemAction(Request $request)
+    {
+        $cart = $this->get('cart');          // trying to use CartService
+
+        $productId = $request->get('product_id');
+        // $quantity = $request->get('qty');
+        $cartId = $cart->getCartId();
+
+        $cart->deleteItem($productId, $cartId);
+
+        return new RedirectResponse('/cart');
+
+        // route /cart with Get is showCartAction, using cart service
+        // to getAllCartProducts adn then render show.all.html.twig
+
+
+
+        /*
+        return $this->render(
+            'AcaShopBundle:Cart:show.all.html.twig',
+            array('cartProducts' => $cartProducts)
+
+
+        );
+        */
+
+        // return $this->redirect('/cart');
+
+
+    }
+
 
 
 

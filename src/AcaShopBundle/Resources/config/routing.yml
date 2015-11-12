@@ -42,7 +42,15 @@ aca_cart_add:
     methods: [POST]
 # change back to /cart
 
+aca_cart_update:
+    path: /update_cart_qty
+    defaults:  { _controller: AcaShopBundle:Cart:updateCartQty}
+    methods: [POST]
 
+aca_cart_delete:
+    path: /delete_cart_item
+    defaults:  { _controller: AcaShopBundle:Cart:deleteCartItem}
+    methods: [POST]
 
 
 

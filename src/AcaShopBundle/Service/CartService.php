@@ -32,6 +32,9 @@ class CartService
     {
         $this->db = $db;
         $this->session = $session;
+
+        //start session if not already
+        if (!$this->session->isStarted()) $this->session->start();
     }
 
 
@@ -123,10 +126,12 @@ class CartService
 
         // We have a cart record
         if (isset($row['id']) && !empty($row)) {
-            return $row['id'];
+            return $cartId = $row['id'];
         }
-        $this->db->insert('aca_cart', array('user_id' => $userId));
-        return $this->getCartId();
+        else {
+            $cartId = $this->db->insert('aca_cart', array('user_id' => $userId));
+            return $cartId;
+        }
     }
 
 
@@ -134,13 +139,14 @@ class CartService
      * Get all products that are in this user's shopping cart
      * @return array|null
      * @throws \Exception
+     * should id be p.id or cp.id?
      */
     public function getAllCartProducts()
     {
 
         $query = '
         select
-	      cp.id,
+	      p.id,
 	      p.name,
 	      p.description,
 	      p.image,
@@ -160,7 +166,56 @@ class CartService
             )
         );
 
+    }
+
+    public function updateQty($productId, $quantity, $cartId)
+    {
+        // $cartId = $this->getCartId();
+
+        $newQty = $this->db->replace('aca_cart_product',
+            array(
+                'cart_id' => $cartId,
+                'product_id' => $productId,
+                'qty' => $quantity
+            )
+        );
+
+    }
+
+    public function deleteItem($productId, $cartId)
+    {
+        // $cartId = $this->getCartId();
+
+        $query = '
+            delete
+              *
+            from
+              aca_cart_product
+            where
+              product_id = ' . $productId;
+
+        /*
+        return $this->db->delete('aca_cart_product',
+            array(
+                'product_id' => $productId
+            )
+            );
+        */
+
+        $tablename = 'aca_cart_product';
+
+        $del = $this->db->delete($tablename,
+            array(
+                'product_id' => $productId,
+                'cart_id' => $cartId
+            )
+        );
+
+        return $del;
+
+
 
 
     }
+
 }
