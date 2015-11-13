@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b60c4225-e472-4037-8c55-f1aee2eef2ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+    <list default="true" id="b60c4225-e472-4037-8c55-f1aee2eef2ac" name="Default" comment="push from phpstorm">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="acashop.iws" />
@@ -117,37 +115,37 @@
       <file leaf-file-name="CartService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Service/CartService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.0" vertical-offset="3195" max-vertical-offset="3791">
-              <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="404" />
+            <state vertical-scroll-proportion="-3.9615386" vertical-offset="3195" max-vertical-offset="3791">
+              <caret line="205" column="40" selection-start-line="205" selection-start-column="40" selection-end-line="205" selection-end-column="40" />
               <folding>
                 <element signature="e#42#66#0#PHP" expanded="true" />
                 <element signature="e#147#167#0#PHP" expanded="false" />
                 <element signature="e#940#1152#0#PHP" expanded="false" />
-                <marker date="1447378776843" expanded="true" signature="1955:2015" placeholder="select price..aca_product..." />
-                <marker date="1447378776843" expanded="true" signature="2563:2675" placeholder="Select id fr..aca_cart..." />
-                <marker date="1447378776843" expanded="true" signature="3278:3609" placeholder="select cp.id..aca_cart_product..." />
-                <marker date="1447378776843" expanded="true" signature="4215:4330" placeholder="delete * fro..." />
-                <marker date="1447378776843" expanded="true" signature="4215:4331" placeholder="delete * fro..." />
+                <marker date="1447384244414" expanded="true" signature="1955:2015" placeholder="select price..aca_product..." />
+                <marker date="1447384244414" expanded="true" signature="2563:2675" placeholder="Select id fr..aca_cart..." />
+                <marker date="1447384244414" expanded="true" signature="3278:3609" placeholder="select cp.id..aca_cart_product..." />
+                <marker date="1447384244414" expanded="true" signature="4215:4330" placeholder="delete * fro..." />
+                <marker date="1447384244414" expanded="true" signature="4215:4331" placeholder="delete * fro..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="272">
+            <state vertical-scroll-proportion="0.28228784" vertical-offset="0" max-vertical-offset="542">
               <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9371534" vertical-offset="343" max-vertical-offset="952">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.269231" vertical-offset="343" max-vertical-offset="952">
+              <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -202,9 +200,9 @@
         <option value="$PROJECT_DIR$/src/AcaShopBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AcaShopBundle/Resources/views/Cart/show.all.html.twig" />
         <option value="$PROJECT_DIR$/src/AcaShopBundle/Controller/CartController.php" />
-        <option value="$PROJECT_DIR$/src/AcaShopBundle/Service/CartService.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/AcaShopBundle/Service/CartService.php" />
       </list>
     </option>
   </component>
@@ -540,6 +538,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acashop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcaShopBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -799,12 +823,18 @@
       <option name="project" value="LOCAL" />
       <updated>1447368483195</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="push from phpstorm">
+      <created>1447384265953</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1447384265953</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="30" y="61" width="1364" height="726" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -813,7 +843,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28374234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28374234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -854,7 +884,8 @@
     <MESSAGE value="catching up" />
     <MESSAGE value="next add update and delete cart buttons/routing" />
     <MESSAGE value="cart delete and update" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart delete and update" />
+    <MESSAGE value="push from phpstorm" />
+    <option name="LAST_COMMIT_MESSAGE" value="push from phpstorm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -893,11 +924,11 @@
             <element signature="e#42#66#0#PHP" expanded="true" />
             <element signature="e#147#167#0#PHP" expanded="false" />
             <element signature="e#940#1152#0#PHP" expanded="false" />
-            <marker date="1447378776843" expanded="true" signature="1955:2015" placeholder="select price..aca_product..." />
-            <marker date="1447378776843" expanded="true" signature="2563:2675" placeholder="Select id fr..aca_cart..." />
-            <marker date="1447378776843" expanded="true" signature="3278:3609" placeholder="select cp.id..aca_cart_product..." />
-            <marker date="1447378776843" expanded="true" signature="4215:4330" placeholder="delete * fro..." />
-            <marker date="1447378776843" expanded="true" signature="4215:4331" placeholder="delete * fro..." />
+            <marker date="1447384244414" expanded="true" signature="1955:2015" placeholder="select price..aca_product..." />
+            <marker date="1447384244414" expanded="true" signature="2563:2675" placeholder="Select id fr..aca_cart..." />
+            <marker date="1447384244414" expanded="true" signature="3278:3609" placeholder="select cp.id..aca_cart_product..." />
+            <marker date="1447384244414" expanded="true" signature="4215:4330" placeholder="delete * fro..." />
+            <marker date="1447384244414" expanded="true" signature="4215:4331" placeholder="delete * fro..." />
           </folding>
         </state>
       </provider>
@@ -1254,33 +1285,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AcaShopBundle/Service/CartService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.0" vertical-offset="3195" max-vertical-offset="3791">
-          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="404" />
+        <state vertical-scroll-proportion="-3.9615386" vertical-offset="3195" max-vertical-offset="3791">
+          <caret line="205" column="40" selection-start-line="205" selection-start-column="40" selection-end-line="205" selection-end-column="40" />
           <folding>
             <element signature="e#42#66#0#PHP" expanded="true" />
             <element signature="e#147#167#0#PHP" expanded="false" />
             <element signature="e#940#1152#0#PHP" expanded="false" />
-            <marker date="1447378776843" expanded="true" signature="1955:2015" placeholder="select price..aca_product..." />
-            <marker date="1447378776843" expanded="true" signature="2563:2675" placeholder="Select id fr..aca_cart..." />
-            <marker date="1447378776843" expanded="true" signature="3278:3609" placeholder="select cp.id..aca_cart_product..." />
-            <marker date="1447378776843" expanded="true" signature="4215:4330" placeholder="delete * fro..." />
-            <marker date="1447378776843" expanded="true" signature="4215:4331" placeholder="delete * fro..." />
+            <marker date="1447384244414" expanded="true" signature="1955:2015" placeholder="select price..aca_product..." />
+            <marker date="1447384244414" expanded="true" signature="2563:2675" placeholder="Select id fr..aca_cart..." />
+            <marker date="1447384244414" expanded="true" signature="3278:3609" placeholder="select cp.id..aca_cart_product..." />
+            <marker date="1447384244414" expanded="true" signature="4215:4330" placeholder="delete * fro..." />
+            <marker date="1447384244414" expanded="true" signature="4215:4331" placeholder="delete * fro..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="272">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9371534" vertical-offset="343" max-vertical-offset="952">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state vertical-scroll-proportion="-14.269231" vertical-offset="343" max-vertical-offset="952">
+          <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28228784" vertical-offset="0" max-vertical-offset="542">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding />
         </state>
       </provider>
