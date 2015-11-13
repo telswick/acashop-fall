@@ -103,11 +103,21 @@ class CartController extends Controller
     {
         $cart = $this->get('cart');          // trying to use CartService
 
-        $productId = $request->get('product_id');
+        $cartproductId = $request->get('cart_product_id');
         $quantity = $request->get('qty');
         $cartId = $cart->getCartId();
 
-        $cart->updateQty($productId, $quantity, $cartId);
+        echo $cartproductId;
+        echo "<br/>";
+        echo $quantity;
+        echo "<br/>";
+
+        echo $cartId;
+        echo "<br/>";
+
+        //die('echo variables before updateQty service');
+
+        $cart->updateQty($cartproductId, $quantity, $cartId);
 
         // return new RedirectResponse('/cart');
 

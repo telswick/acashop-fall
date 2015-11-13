@@ -146,7 +146,7 @@ class CartService
 
         $query = '
         select
-	      p.id,
+	      cp.id,
 	      p.name,
 	      p.description,
 	      p.image,
@@ -168,21 +168,22 @@ class CartService
 
     }
 
-    public function updateQty($productId, $quantity, $cartId)
+    public function updateQty($cartproductId, $quantity, $cartId)
     {
         // $cartId = $this->getCartId();
 
-        $newQty = $this->db->replace('aca_cart_product',
+        $newQty = $this->db->update('aca_cart_product',
+        array(
+            'id' => $cartproductId
+        ),
             array(
-                'cart_id' => $cartId,
-                'product_id' => $productId,
                 'qty' => $quantity
             )
         );
 
     }
 
-    public function deleteItem($productId, $cartId)
+    public function deleteItem($cartproductId, $cartId)
     {
         // $cartId = $this->getCartId();
 
@@ -206,6 +207,9 @@ class CartService
 
         $del = $this->db->delete($tablename,
             array(
+                'id' => $cartproductId
+            ),
+            array(
                 'product_id' => $productId,
                 'cart_id' => $cartId
             )
@@ -219,3 +223,7 @@ class CartService
     }
 
 }
+
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUrm7kCHIC7n1FEjFwBxhVVFhFbKH0ynpB2Axz5Kgx0JqOlD9N/ZppUsFn2KRnjXCgrOLSLzDMJ/r+ILvNvl4tbVW75iwPzw8lFslrJuROKviEGSkYJiCCocLHObBRvhvIgkFsvCi7Z3BLXd0TYzrAmWGgNJq2+X7gZQe5WZpWlday8+AjP3VAUT9PJ/9W0dV/ixUtIipMjjKk87ME4yBHwX1rPX6RQc59MB6IO52+cex8IHcJQEiK7lBT0rMYLF6SrgSCShntvImIyjmDuKcv53QRy43Gege4DhO6zQTOb1I3coFGw2oKs7Dy91GKmGq3JX4CyMWs9+/OixaCX/B1 ubuntu@ip-172-31-22-134
