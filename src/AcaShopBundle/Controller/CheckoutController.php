@@ -58,9 +58,6 @@ class CheckoutController extends Controller
                 id = "' . $userId . '"
         ';
 
-
-        $cart = $this->get('cart');
-
         $checkout = $this->get('checkout');   // using checkout service container
 
         $shippingAddress = $checkout->getShippingAddress($shippingId);

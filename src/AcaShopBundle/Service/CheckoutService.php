@@ -50,7 +50,7 @@ class CheckoutService
                     zip
                 from aca_address
                 WHERE
-                    address_id = "' . $shippingId . '"
+                    address_id = :$shippingId
             ';
 
 
