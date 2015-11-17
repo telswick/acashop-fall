@@ -52,6 +52,12 @@ aca_cart_delete:
     defaults:  { _controller: AcaShopBundle:Cart:deleteCartItem}
     methods: [POST]
 
+aca_checkout:
+    path: /checkout
+    defaults: { _controller: AcaShopBundle:Checkout:verifyAddress}
+    methods: [POST]
+
+
 
 
 
