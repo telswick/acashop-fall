@@ -77,8 +77,14 @@ class CheckoutController extends Controller
             ';
 
         $db = $this->get('acadb');
-        $shipAddress = $db->fetchRow($shipQuery);
-        $billAddress = $db->fetchRow($billQuery);
+        $shipAddress = $db->fetchRow($shipQuery,
+            array('addressId' => $shippingId));
+        
+
+
+
+        $billAddress = $db->fetchRow($billQuery,
+            array('addressId' => $billingId));
 
 
 
