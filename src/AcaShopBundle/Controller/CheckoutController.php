@@ -58,44 +58,21 @@ class CheckoutController extends Controller
                 id = "' . $userId . '"
         ';
 
-        // now get shipping address
-        $shipQuery ='
-                select
-                    *
-                 from aca_address
-                WHERE
-                    address_id = "' . $shippingId . '"
-            ';
 
-        // now get billing address
-        $billQuery ='
-                select
-                    *
-                 from aca_address
-                WHERE
-                    address_id = "' . $billingId . '"
-            ';
+        $cart = $this->get('cart');
 
-        $db = $this->get('acadb');
-        $shipAddress = $db->fetchRow($shipQuery,
-            array('addressId' => $shippingId));
-        
+        $checkout = $this->get('checkout');   // using checkout service container
 
-
-
-        $billAddress = $db->fetchRow($billQuery,
-            array('addressId' => $billingId));
-
-
-
+        $shippingAddress = $checkout->getShippingAddress($shippingId);
+        $billingAddress = $checkout->getBillingAddress($billingId);
 
 
 
         return $this->render(
             'AcaShopBundle:Checkout:show.checkout.html.twig',
             array(
-                'shipAddress' => $shipAddress,
-                'billAddress' => $billAddress)
+                'shippingAddress' => $shippingAddress,
+                'billingAddress' => $billingAddress)
 
 
         );

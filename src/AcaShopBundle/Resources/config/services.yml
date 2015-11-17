@@ -12,3 +12,9 @@ services:
     arguments:  [@acadb, @session]
 
     # now object will get correct parameters by @ referring to another service
+
+  checkout:
+    class: AcaShopBundle\Service\CheckoutService
+    arguments:  [@acadb, @session, @cart]
+
+
