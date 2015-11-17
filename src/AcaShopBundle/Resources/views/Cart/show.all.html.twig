@@ -55,22 +55,23 @@
 
         {% for cartProduct in cartProducts %}
 
+
         <tr>
-            <td>{{ cartProduct.id }}  </td>
+            <td>{{ cartProduct.pid }}  </td>
             <td>{{ cartProduct.name }}</td>
             <td>{{ cartProduct.price }} </td>
             <td>{{ cartProduct.qty }}</td>
-            <td> 2000.00 </td>
+            <td>{{ cartProduct.sub }}</td>
             <td>
 
                 <form name="quantityForm" action="/update_cart_qty" method="post">
-                    <input type="hidden" name="cart_product_id" value="{{ cartProduct.id }}"/>
+                    <input type="hidden" name="cart_product_id" value="{{ cartProduct.pid }}"/>
                     <input type="text" size="3" name="qty" value="{{ cartProduct.qty }}"/>
                     <input type="submit" value="Update" class="button btn-primary"/>
                 </form>
 
                 <form name="deleteForm" action="/delete_cart_item" method="post">
-                    <input type="hidden" name="cart_product_id" value="{{ cartProduct.id }}"/>
+                    <input type="hidden" name="cart_product_id" value="{{ cartProduct.pid }}"/>
                     <input type="submit" value="Delete" class="button btn-danger"/>
                 </form>
 

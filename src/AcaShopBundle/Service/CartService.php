@@ -64,6 +64,8 @@ class CartService
 
         $productPrice = $this->getProductPrice($productId);
 
+        $subTotal = $quantity * $productPrice;
+
 
         // echo $cartId;
         // echo $productPrice;
@@ -75,8 +77,11 @@ class CartService
                 'cart_id' => $cartId,
                 'product_id' => $productId,
                 'qty' => $quantity,
-                'unit_price' => $productPrice)
+                'unit_price' => $productPrice,
+                'sub_total' => $subTotal)
         );
+
+        $this->session->save();
 
         return !empty($insertedId) && is_int($insertedId) ? true : false;
 
@@ -146,12 +151,13 @@ class CartService
 
         $query = '
         select
-	      cp.id,
+	      cp.product_id as pid,
 	      p.name,
 	      p.description,
 	      p.image,
 	      cp.unit_price as price,
-	      cp.qty
+	      cp.qty,
+	      cp.sub_total as sub
         from
             aca_cart_product as cp
 	        inner join aca_product as p on (p.id = cp.product_id)
@@ -174,7 +180,7 @@ class CartService
 
         $newQty = $this->db->update('aca_cart_product',
         array(
-            'id' => $cartproductId
+            'product_id' => $cartproductId
         ),
             array(
                 'qty' => $quantity
@@ -187,13 +193,16 @@ class CartService
     {
         // $cartId = $this->getCartId();
 
+
+        /*
         $query = '
             delete
               *
             from
               aca_cart_product
             where
-              product_id = ' . $productId;
+              product_id = ' . $cartproductId;
+        */
 
         /*
         return $this->db->delete('aca_cart_product',
@@ -203,19 +212,13 @@ class CartService
             );
         */
 
-        $tablename = 'aca_cart_product';
+        // $tablename = 'aca_cart_product';
 
-        $del = $this->db->delete($tablename,
-            array(
-                'id' => $cartproductId
-            ),
-            array(
-                'product_id' => $productId,
-                'cart_id' => $cartId
-            )
-        );
+        // echo 'cart product id: ' . $cartproductId;
 
-        return $del;
+        $this->db->delete('aca_cart_product', array('product_id' => $cartproductId, 'cart_id' => $cartId));
+
+
 
 
 
@@ -226,4 +229,3 @@ class CartService
 
 
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUrm7kCHIC7n1FEjFwBxhVVFhFbKH0ynpB2Axz5Kgx0JqOlD9N/ZppUsFn2KRnjXCgrOLSLzDMJ/r+ILvNvl4tbVW75iwPzw8lFslrJuROKviEGSkYJiCCocLHObBRvhvIgkFsvCi7Z3BLXd0TYzrAmWGgNJq2+X7gZQe5WZpWlday8+AjP3VAUT9PJ/9W0dV/ixUtIipMjjKk87ME4yBHwX1rPX6RQc59MB6IO52+cex8IHcJQEiK7lBT0rMYLF6SrgSCShntvImIyjmDuKcv53QRy43Gege4DhO6zQTOb1I3coFGw2oKs7Dy91GKmGq3JX4CyMWs9+/OixaCX/B1 ubuntu@ip-172-31-22-134

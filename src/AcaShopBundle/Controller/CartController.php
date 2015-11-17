@@ -54,6 +54,13 @@ class CartController extends Controller
 
         $cartProducts = $cart->getAllCartProducts();
 
+        // echo '<pre>';
+        // print_r($cartProducts);
+        // die('here');
+
+        // $total = $cartProducts['price'] * $cartProducts['qty'];
+        // $cartProducts = $cartProducts . $total;
+
 
 
         return $this->render(
@@ -94,6 +101,7 @@ class CartController extends Controller
 
         $cart->addProduct($productId, $quantity);
 
+
         return new RedirectResponse('/cart');
 
 
@@ -132,13 +140,19 @@ class CartController extends Controller
     {
         $cart = $this->get('cart');          // trying to use CartService
 
-        $productId = $request->get('product_id');
+        $productId = $request->get('cart_product_id');
         // $quantity = $request->get('qty');
         $cartId = $cart->getCartId();
 
+        // echo 'product id is: ' . $productId;
+        // die('in delete cart item action, before calling delete item');
+
         $cart->deleteItem($productId, $cartId);
 
-        return new RedirectResponse('/cart');
+        // return new RedirectResponse('/cart');
+
+        return $this->redirect('/cart');
+
 
         // route /cart with Get is showCartAction, using cart service
         // to getAllCartProducts adn then render show.all.html.twig
