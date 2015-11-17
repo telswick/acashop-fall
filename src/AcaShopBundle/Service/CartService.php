@@ -178,12 +178,19 @@ class CartService
     {
         // $cartId = $this->getCartId();
 
-        $newQty = $this->db->update('aca_cart_product',
+        // Also need to update subtotal when updating qty
+
+        $productPrice = $this->getProductPrice($cartproductId);
+
+        $subTotal = $quantity * $productPrice;
+
+        $this->db->update('aca_cart_product',
         array(
             'product_id' => $cartproductId
         ),
             array(
-                'qty' => $quantity
+                'qty' => $quantity,
+                'sub_total' => $subTotal
             )
         );
 
