@@ -64,6 +64,8 @@ class CartService
 
         $productPrice = $this->getProductPrice($productId);
 
+        $subTotal = $quantity * $productPrice;
+
 
         // echo $cartId;
         // echo $productPrice;
@@ -75,8 +77,11 @@ class CartService
                 'cart_id' => $cartId,
                 'product_id' => $productId,
                 'qty' => $quantity,
-                'unit_price' => $productPrice)
+                'unit_price' => $productPrice,
+                'sub_total' => $subTotal)
         );
+
+        $this->session->save();
 
         return !empty($insertedId) && is_int($insertedId) ? true : false;
 
@@ -146,12 +151,13 @@ class CartService
 
         $query = '
         select
-	      cp.id,
+	      cp.product_id as pid,
 	      p.name,
 	      p.description,
 	      p.image,
 	      cp.unit_price as price,
-	      cp.qty
+	      cp.qty,
+	      cp.sub_total as sub
         from
             aca_cart_product as cp
 	        inner join aca_product as p on (p.id = cp.product_id)
@@ -174,7 +180,7 @@ class CartService
 
         $newQty = $this->db->update('aca_cart_product',
         array(
-            'id' => $cartproductId
+            'product_id' => $cartproductId
         ),
             array(
                 'qty' => $quantity
@@ -187,13 +193,16 @@ class CartService
     {
         // $cartId = $this->getCartId();
 
+
+        /*
         $query = '
             delete
               *
             from
               aca_cart_product
             where
-              product_id = ' . $productId;
+              product_id = ' . $cartproductId;
+        */
 
         /*
         return $this->db->delete('aca_cart_product',
@@ -203,19 +212,13 @@ class CartService
             );
         */
 
-        $tablename = 'aca_cart_product';
+        // $tablename = 'aca_cart_product';
 
-        $del = $this->db->delete($tablename,
-            array(
-                'id' => $cartproductId
-            ),
-            array(
-                'product_id' => $productId,
-                'cart_id' => $cartId
-            )
-        );
+        // echo 'cart product id: ' . $cartproductId;
 
-        return $del;
+        $this->db->delete('aca_cart_product', array('product_id' => $cartproductId, 'cart_id' => $cartId));
+
+
 
 
 
