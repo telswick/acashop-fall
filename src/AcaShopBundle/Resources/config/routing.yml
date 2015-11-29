@@ -55,7 +55,23 @@ aca_cart_delete:
 aca_checkout:
     path: /checkout
     defaults: { _controller: AcaShopBundle:Checkout:verifyAddress}
-    methods: [POST]
+    methods: [GET, POST]
+
+aca_checkout_verified:
+    path: /verified
+    defaults: { _controller: AcaShopBundle:Checkout:selectPayment}
+    methods: [GET, POST]
+
+aca_place_order:
+  path: /place_order
+  defaults: { _controller: AcaShopBundle:Order:placeOrder}
+  methods: [POST]
+
+aca_over:
+  path: /thank_you
+  defaults: { _controller: AcaShopBundle:Order:thankYou}
+  methods: [GET]
+
 
 
 

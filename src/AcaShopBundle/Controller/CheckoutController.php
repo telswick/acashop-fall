@@ -23,42 +23,42 @@ class CheckoutController extends Controller
      */
     public function verifyAddressAction()
     {
-        $cart = $this->get('cart');
+        $cart = $this->get('cart');           // using cart service container
+        $checkout = $this->get('checkout');   // using checkout service container
 
-        $cartProducts = $cart->getAllCartProducts();
+
 
         // need to get cart_id from aca_cart_product
-        $cartId = $cart->getCartId();
+
+        // $cartId = $cart->getCartId();
 
         // need to get user_id from aca_cart given cartId
 
-        $userId = '
-            select
-                user_id
-            from aca_cart
-            where
-             id = "' . $cartId . '"
-             ';
+        $userId = $checkout->getUserId();
+
+        // $userId = '
+        //     select
+        //         user_id
+        //     from aca_cart
+        //     where
+        //      id = "' . $cartId . '"
+        //      ';
 
         // need to get shipping_address_id and billing_address_id from aca_user given user_id
 
-        $shippingId = '
-            select
-                shipping_address_id
-            from aca_user
-            WHERE
-                id = "' . $userId . '"
-        ';
 
-        $billingId = '
-            select
-                billing_address_id
-            from aca_user
-            WHERE
-                id = "' . $userId . '"
-        ';
+        $shippingId = $checkout->getShippingAddressId($userId);
+        $shippingId = array_pop($shippingId);
+        $billingId = $checkout->getBillingAddressId($userId);
+        $billingId = array_pop($billingId);
 
-        $checkout = $this->get('checkout');   // using checkout service container
+        // echo '<pre/>';
+        // print_r($shippingId);
+        // echo '<br/>';
+        // print_r($billingId);
+
+        // die('shippingId and BillingId');
+
 
         $shippingAddress = $checkout->getShippingAddress($shippingId);
         $billingAddress = $checkout->getBillingAddress($billingId);
@@ -77,6 +77,14 @@ class CheckoutController extends Controller
 
     }
 
+    public function selectPaymentAction()
+    {
 
+        return $this->render(
+            'AcaShopBundle:Checkout:select.payment.html.twig');
+
+
+
+    }
 
 }

@@ -9,12 +9,19 @@ services:
 
   cart:
     class: AcaShopBundle\Service\CartService
-    arguments:  [@acadb, @session]
+    arguments:  [@acadb, @session, @model.cart]
 
     # now object will get correct parameters by @ referring to another service
+
+  model.cart:
+    class: AcaShopBundle\Model\Cart
+    arguments: [@acadb]
 
   checkout:
     class: AcaShopBundle\Service\CheckoutService
     arguments:  [@acadb, @session, @cart]
 
 
+  order:
+    class: AcaShopBundle\Service\OrderService
+    arguments:  [@acadb, @session, @cart]

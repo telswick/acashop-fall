@@ -37,6 +37,26 @@ class CheckoutService
         if (!$this->session->isStarted()) $this->session->start();
     }
 
+    public function getUserId()
+    {
+        return $this->session->get('user_id');
+
+    }
+
+
+    public function getShippingAddressId($userId)
+    {
+        $shippingIdquery = '
+            select
+                shipping_address_id
+            from aca_user
+            WHERE
+                user_id = "' . $userId . '"
+        ';
+
+        return $this->db->fetchRow($shippingIdquery);
+
+    }
 
     public function getShippingAddress($shippingId)
     {
@@ -50,23 +70,37 @@ class CheckoutService
                     zip
                 from aca_address
                 WHERE
-                    address_id = :$shippingId
+                    address_id = "'. $shippingId . '"
             ';
 
 
 
         $row = $this->db->fetchRow($shipQuery,
             array(
-                'shippingAddress' => $shippingId)
+                'shippingId' => $shippingId)
             );
 
-        echo '<pre/>';
-        print_r($row);
+        // echo '<pre/>';
+        // print_r($row);
 
-        die('shipping address');
+        // die('shipping address');
 
         return $row;
 
+
+    }
+
+    public function getBillingAddressId($userId)
+    {
+        $billingIdquery = '
+            select
+                billing_address_id
+            from aca_user
+            WHERE
+                user_id = "' . $userId . '"
+        ';
+
+        return $this->db->fetchRow($billingIdquery);
 
     }
 
@@ -89,10 +123,10 @@ class CheckoutService
                 'billingAddress' => $billingId)
             );
 
-        echo '<pre/>';
-        print_r($row);
+        // echo '<pre/>';
+        // print_r($row);
 
-        die('billing address');
+        // die('billing address');
 
         return $row;
 

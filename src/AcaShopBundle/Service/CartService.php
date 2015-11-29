@@ -4,6 +4,7 @@
 namespace AcaShopBundle\Service;
 
 use Simplon\Mysql\Mysql;
+use AcaShopBundle\Model\Cart as CartModel;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class CartService
@@ -28,10 +29,18 @@ class CartService
      */
     protected $session;
 
-    public function __construct(Mysql $db, Session $session)
+
+    /**
+     * @var CartModel
+     */
+    protected $cartModel;
+
+
+    public function __construct(Mysql $db, Session $session, CartModel $cart)
     {
         $this->db = $db;
         $this->session = $session;
+        $this->cartModel = $cart;
 
         //start session if not already
         if (!$this->session->isStarted()) $this->session->start();
@@ -102,6 +111,12 @@ class CartService
 
     }
 
+    public function getUserId()
+    {
+        return $this->session->get('user_id');
+
+    }
+
 
     /**
      * Create a cart record, and return the ID, if it doesn't exist
@@ -149,6 +164,10 @@ class CartService
     public function getAllCartProducts()
     {
 
+        return $this->cartModel->getAllCartProducts($this->getCartId());
+
+
+        /* Replace the following section with cartModel version, above
         $query = '
         select
 	      cp.product_id as pid,
@@ -171,6 +190,7 @@ class CartService
                 'myCartId' => $this->getCartId()
             )
         );
+        */
 
     }
 
@@ -226,10 +246,20 @@ class CartService
         $this->db->delete('aca_cart_product', array('product_id' => $cartproductId, 'cart_id' => $cartId));
 
 
+    }
 
+    /**
+     * Delete a shopping cart. Because SRP
+     * @see https://en.wikipedia.org/wiki/Single_responsibility_principle
+     * @throws \Exception
+     */
+    public function nixCart()
+    {
+        $cartId = $this->getCartId();
 
+        $this->db->delete('aca_cart_product', array('cart_id' => $cartId));
 
-
+        $this->db->delete('aca_cart', array('id' => $cartId));
     }
 
 }

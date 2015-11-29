@@ -1,0 +1,41 @@
+{%  extends "::base.html.twig" %}
+
+{%  block content %}
+
+<div class="container">
+    {% block container %}
+
+
+
+
+
+    <h1>ACA Shop</h1>
+    <h2>Please select from the following payment options</h2><br/>
+        <form>
+            <br>
+        <input type="radio" name = "pay" value = "visa">Visa
+            <br>
+            <input type="radio" name = "pay" value = "mastercard">MasterCard
+            <br>
+        <input type="radio" name = "pay" value = "echeck">E-Check
+            <br>
+        </form>
+
+        <h2>You are ready to place your order now!</h2><br/>
+
+        <form name = "orderForm" action = "/place_order" method="post">
+            <input type="hidden" name="submit_check" value="1">
+            <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+
+
+
+
+
+
+
+
+    {% endblock %}
+</div>
+
+{% endblock %}
